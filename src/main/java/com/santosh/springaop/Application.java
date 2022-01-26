@@ -1,5 +1,6 @@
 package com.santosh.springaop;
 
+import com.santosh.springaop.manager.LoginManager;
 import com.santosh.springaop.manager.ShapeManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +13,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class Application implements CommandLineRunner {
     @Autowired
     private ShapeManager shapeManager;
+    @Autowired
+    private LoginManager loginManager;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -19,6 +22,10 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        shapeManager.perform();
+        //shapeManager.perform();
+
+       // loginManager.setParameters("santosh","pass");
+        loginManager.validate();
+       // loginManager.doLogin();
     }
 }

@@ -11,7 +11,7 @@ public class CircleLoggingAspect {
 
     //logs all methods of Circle class
     @Before("execution(* com.santosh.springaop.service.Circle.*(..))")
-    public void logAllmethods(JoinPoint joinPoint) {
+    public void logAllMethods(JoinPoint joinPoint) {
         String targetClass = joinPoint.getTarget().getClass().getSimpleName();
         String targetMethod = joinPoint.getSignature().getName();
         System.out.println("AOP1[" + targetClass + " : " + targetMethod + "()] : " + joinPoint.getSignature().getName() + " is called");
